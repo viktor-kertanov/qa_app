@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% from "show_links.html" import show_links %}
+{% block title %}Question{% endblock %}
+{% block nav %}
+{{ show_links(user) }}
+{% endblock %}
+{% block body %}
+<div class="jumbotron">
+  <h1>{{qa.question_text}}</h1>
+  <p>{{ qa.answer_text }}</p>
+  <p><a class="btn btn-primary btn-lg">Asked By: {{ qa.asker }}</a></p>
+  <p><a class="btn btn-primary btn-lg">Answered By: {{ qa.expert }}</a></p>
+</div>
+{% endblock %}
